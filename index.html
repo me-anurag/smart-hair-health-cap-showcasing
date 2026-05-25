@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ScalpSense — Smart Cap by HairHealth</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-logo">🧢 ScalpSense</div>
+    <div class="nav-links">
+      <a href="#section-hero"    class="nav-link active">Product</a>
+      <a href="#section-sensors" class="nav-link">Sensors</a>
+      <a href="#section-flow"    class="nav-link">How It Works</a>
+    </div>
+  </nav>
+
+  <!-- SECTION 1: HERO -->
+  <section id="section-hero">
+    <div id="hero-root"></div>
+  </section>
+
+  <!-- SECTION 2: SENSOR MAP -->
+  <section id="section-sensors">
+    <div id="sensors-root"></div>
+  </section>
+
+  <!-- SECTION 3: SYSTEM FLOW -->
+  <section id="section-flow">
+    <div id="flow-root"></div>
+  </section>
+
+  <!-- SCRIPTS — order matters -->
+  <script src="section1-hero.js"></script>
+  <script src="section2-sensors.js"></script>
+  <script src="section3-flow.js"></script>
+  <script>
+    // Nav active state on scroll
+    const sections = ['section-hero','section-sensors','section-flow'];
+    const links    = document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(id => {
+        const el = document.getElementById(id);
+        if (el && window.scrollY >= el.offsetTop - 120) current = '#' + id;
+      });
+      links.forEach(l => {
+        l.classList.toggle('active', l.getAttribute('href') === current);
+      });
+    });
+  </script>
+</body>
+</html>
