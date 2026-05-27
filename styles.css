@@ -148,7 +148,7 @@ section {
 .site-footer {
   border-top: 1px solid var(--border);
   padding: 48px 60px 32px;
-  background: var(--bg);
+  background: #000000;
 }
 
 .site-footer-top {
@@ -194,7 +194,7 @@ section {
   justify-content: space-between;
   align-items: center;
   padding-top: 24px;
-  border-top: 1px solid var(--bg3);
+  border-top: 1px solid #111111;
 }
 
 .site-footer-copy {
