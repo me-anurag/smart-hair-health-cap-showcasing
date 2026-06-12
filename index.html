@@ -12,17 +12,23 @@
   <nav class="nav" id="nav">
     <div class="nav-logo">🧢 ScalpSense</div>
     <div class="nav-links">
-      <a href="#section-hero"    class="nav-link active">Product</a>
-      <a href="#section-sensors" class="nav-link">Sensors</a>
-      <a href="#section-flow"    class="nav-link">How It Works</a>
+      <a href="#section-hero"       class="nav-link active">Product</a>
+      <a href="#section-sensors"    class="nav-link">Sensors</a>
+      <a href="#section-arch"       class="nav-link">Architecture</a>
+      <a href="#section-components" class="nav-link">Components</a>
+      <a href="#section-flow"       class="nav-link">Signal Flow</a>
+      <a href="#section-score"      class="nav-link">Score Calc</a>
     </div>
   </nav>
 
-  <!-- SECTION 1: HERO -->
-  <section id="section-hero">
-    <div id="hero-root"></div>
-  </section>
+  <section id="section-hero">    <div id="hero-root"></div>    </section>
+  <section id="section-sensors"> <div id="sensors-root"></div> </section>
+  <section id="section-arch">    <div id="arch-root"></div>    </section>
+  <section id="section-components"><div id="comp-root"></div>  </section>
+  <section id="section-flow">    <div id="flow-root"></div>    </section>
+  <section id="section-score">   <div id="score-root"></div>   </section>
 
+<<<<<<< HEAD
   <!-- SECTION 2: SENSOR MAP -->
   <section id="section-sensors">
     <div id="sensors-root"></div>
@@ -57,12 +63,17 @@
   </footer>
 
   <!-- SCRIPTS — order matters -->
+=======
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+>>>>>>> 649c0e1 (presentation ppts)
   <script src="section1-hero.js"></script>
   <script src="section2-sensors.js"></script>
+  <script src="section4-architecture.js"></script>
+  <script src="section5-components.js"></script>
   <script src="section3-flow.js"></script>
+  <script src="section6-score.js"></script>
   <script>
-    // Nav active state on scroll
-    const sections = ['section-hero','section-sensors','section-flow'];
+    const sections = ['section-hero','section-sensors','section-arch','section-components','section-flow','section-score'];
     const links    = document.querySelectorAll('.nav-link');
     window.addEventListener('scroll', () => {
       let current = '';
@@ -70,9 +81,7 @@
         const el = document.getElementById(id);
         if (el && window.scrollY >= el.offsetTop - 120) current = '#' + id;
       });
-      links.forEach(l => {
-        l.classList.toggle('active', l.getAttribute('href') === current);
-      });
+      links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === current));
     });
   </script>
 
